@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>今天谁请客 | 武侠饭局</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>武侠饭局</h1>
+      <p class="subtitle">江湖一聚，谁是东道主？</p>
+    </header>
+    
+    <div class="table-container">
+      <canvas id="table" width="500" height="500"></canvas>
+    </div>
+    
+    <div class="action-area">
+      <button id="roll-btn">今天谁请客</button>
+    </div>
+  </div>
+  
+  <div id="winner" class="hidden">
+    <div class="winner-content">
+      <img id="winner-avatar" src="" alt="胜出者">
+      <div class="winner-text">
+        <p id="winner-name"></p>
+        <p class="winner-tagline">老板大气</p>
+      </div>
+      <button class="close-btn">返回饭局</button>
+    </div>
+  </div>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>

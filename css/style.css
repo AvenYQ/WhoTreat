@@ -1,0 +1,245 @@
+/* 基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Noto Serif SC', serif;
+    background-color: #f5f0e1;
+    background-image: url('https://www.transparenttextures.com/patterns/rice-paper.png');
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* 头部样式 */
+  header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #9c7c38;
+    position: relative;
+  }
+  
+  header:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: #9c7c38;
+  }
+  
+  h1 {
+    font-size: 42px;
+    color: #9c7c38;
+    letter-spacing: 6px;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  }
+  
+  .subtitle {
+    font-size: 18px;
+    color: #6e5a31;
+    letter-spacing: 2px;
+  }
+  
+  /* 圆桌容器 */
+  .table-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 40px;
+    padding: 30px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  canvas#table {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    background: transparent;
+  }
+  
+  /* 按钮区域 */
+  .action-area {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  button {
+    font-family: 'Noto Serif SC', serif;
+    background: linear-gradient(135deg, #b8973d, #9c7c38);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 2px;
+  }
+  
+  button:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+  }
+  
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+  
+  button:hover:before {
+    left: 100%;
+  }
+  
+  button:active {
+    transform: translateY(1px);
+  }
+  
+  /* 胜出者全屏显示 */
+  #winner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  #winner.visible {
+    opacity: 1;
+  }
+  
+  #winner.hidden {
+    display: none;
+  }
+  
+  .winner-content {
+    text-align: center;
+    padding: 30px;
+    border-radius: 8px;
+    background: rgba(156, 124, 56, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(156, 124, 56, 0.3);
+    animation: fadeInScale 0.5s ease forwards;
+    max-width: 90%;
+  }
+  
+  #winner-avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 4px solid #9c7c38;
+    object-fit: cover;
+    box-shadow: 0 0 30px rgba(156, 124, 56, 0.5);
+  }
+  
+  .winner-text {
+    margin-top: 20px;
+  }
+  
+  #winner-name {
+    font-size: 36px;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(156, 124, 56, 0.7);
+    margin-bottom: 5px;
+  }
+  
+  .winner-tagline {
+    font-size: 24px;
+    color: #9c7c38;
+    letter-spacing: 3px;
+  }
+  
+  .close-btn {
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* 动画 */
+  @keyframes fadeInScale {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* 响应式设计 */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 32px;
+      letter-spacing: 3px;
+    }
+    
+    .subtitle {
+      font-size: 16px;
+    }
+    
+    .table-container {
+      padding: 10px;
+    }
+    
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    
+    #winner-avatar {
+      width: 140px;
+      height: 140px;
+    }
+    
+    #winner-name {
+      font-size: 28px;
+    }
+    
+    .winner-tagline {
+      font-size: 20px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    h1 {
+      font-size: 28px;
+    }
+    
+    .container {
+      padding: 15px;
+    }
+    
+    #winner-avatar {
+      width: 120px;
+      height: 120px;
+    }
+  }
+  
