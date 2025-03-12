@@ -1,7 +1,7 @@
 const users = [
-  { name: "叶孤", avatar: "./assets/1.png" },  // 或 "assets/1.png"
-  { name: "萧峰", avatar: "./assets/2.png" },  // 或 "assets/2.png"
-  { name: "虚竹", avatar: "./assets/3.png" }   // 或 "assets/3.png"
+  { name: "卿卿", avatar: "./assets/1.png" },  // 或 "assets/1.png"
+  { name: "钱钱", avatar: "./assets/2.png" },  // 或 "assets/2.png"
+  { name: "芋圆", avatar: "./assets/3.png" }   // 或 "assets/3.png"
 ];
 
   // 获取DOM元素
